@@ -1,0 +1,12 @@
+VAE as GAN's Generator | GAN-Discriminator as VAE's Loss Measurement
+By Mo Wentao @MatthewL
+This code is based on github.com/seangal/dcgan_vae_pytorch and is referred to
+github.com/zhangqianhui/vae-gan-tensorflow/, while both implementation
+is somewhat broken and not correct, and the original paper is arxiv.org/abs/1512.09300
+We corrected the code and increased stability of training and offered option to
+make the discriminator a (could be pretrained) resNet/squeezeNet/denseNet, which
+in the contrast is proved not so useful to train generator, also we compared the
+optimizers on VAE/GAN, and only Adam series optimizer works fine, while (Nesterov or
+naive) SGD converge very slowly and RMSprop quite slower than Adam.
+After about 700 epochs on Tesla V100 (Huawei Cloud), the result model is obtained
+with fair quality of generated images.
